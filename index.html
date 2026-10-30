@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>دليل مسارات المعلمين</title>
+    <!-- ربط مكتبة تلجرام الأساسية -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- استدعاء خط Cairo من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* إعدادات عامة */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            /* خلفية دافئة ومريحة */
+            background-color: #fffaf0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 10px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            color: #2c3e50;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        /* شبكة الأزرار (عمودين) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* تصميم الزر الواحد */
+        .channel-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            border-radius: 16px;
+            color: white;
+            text-decoration: none;
+            height: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* تأثير الضغط */
+        .channel-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* السهم في الزاوية */
+        .channel-btn .arrow {
+            position: absolute;
+            top: 12px;
+            left: 12px; 
+            font-size: 18px;
+            opacity: 0.8;
+            font-weight: bold;
+        }
+
+        /* النصوص والأيقونات داخل الزر */
+        .channel-btn .icon {
+            font-size: 30px;
+            align-self: flex-end; 
+        }
+
+        .channel-btn .title {
+            font-size: 15px;
+            font-weight: 800;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        /* الألوان المخصصة لكل زر */
+        .btn-red {
+            background: linear-gradient(135deg, #ff6b6b, #ee5253);
+        }
+        .btn-green {
+            background: linear-gradient(135deg, #1dd1a1, #10ac84);
+        }
+        .btn-blue {
+            background: linear-gradient(135deg, #54a0ff, #2e86de);
+        }
+        .btn-orange {
+            background: linear-gradient(135deg, #feca57, #ff9f43);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>📚 مسارات المعلمين</h1>
+        <p>اختر القناة التي تريد تصفحها</p>
+    </div>
+
+    <div class="grid-container">
+        
+        <!-- القناة العامة -->
+        <a href="https://t.me/a_3looom" class="channel-btn btn-red" target="_blank">
+            <span class="arrow">↗</span>
+            <span class="icon">🌐</span>
+            <span class="title">القناة العامة</span>
+        </a>
+
+        <!-- مقدمة في الأعمال -->
+        <a href="https://t.me/ather_mg" class="channel-btn btn-green" target="_blank">
+            <span class="arrow">↗</span>
+            <span class="icon">💼</span>
+            <span class="title">مقدمة في الأعمال</span>
+        </a>
+
+        <!-- الحملات التسويقية -->
+        <a href="https://t.me/ather_su" class="channel-btn btn-blue" target="_blank">
+            <span class="arrow">↗</span>
+            <span class="icon">📈</span>
+            <span class="title">الحملات التسويقية</span>
+        </a>
+
+        <!-- إدارة مالية -->
+        <a href="https://t.me/ather_adr" class="channel-btn btn-orange" target="_blank">
+            <span class="arrow">↗</span>
+            <span class="icon">💰</span>
+            <span class="title">إدارة مالية</span>
+        </a>
+
+    </div>
+
+    <script>
+        // تفعيل وضع التطبيق المصغر وتوسيع الشاشة تلقائياً
+        let tg = window.Telegram.WebApp;
+        tg.expand(); 
+        
+        // تغيير لون الهيدر العلوي لتلجرام ليتناسب مع التصميم
+        tg.setHeaderColor('#fffaf0');
+        tg.setBackgroundColor('#fffaf0');
+    </script>
+</body>
+</html>
